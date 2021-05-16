@@ -1,0 +1,125 @@
+{% extends 'base.html' %} {% block css %}
+
+<style>
+  .header {
+    height: 90vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    /*62,32,233*/
+    background: linear-gradient(
+        to right,
+        rgba(250, 64, 64, 0.233),
+        rgba(8, 8, 8, 0.9)
+      ),
+      url(https://5.imimg.com/data5/PI/FD/NK/SELLER-5866466/images-500x500.jpg);
+    background-size: cover;
+  }
+  .header2 {
+    height: 90vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    /*62,32,233*/
+    background: linear-gradient(
+        to right,
+        rgba(250, 64, 64, 0.233),
+        rgba(8, 8, 8, 0.9)
+      )
+      
+  }
+  .message
+{
+background-image: linear-gradient(to bottom, #feada6 0%, #f5efef 100%);
+}
+</style>
+
+{% endblock%} {% block body %}
+<header class="header">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-md-12 text-center">
+        <a href="detect_user"
+          ><button class="btn btn-primary">Check for Mask.</button></a
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Flexbox container for aligning the toasts -->
+
+
+<!-- 
+<div class="container">
+  {% if show %}
+
+  <p>show</p>
+  {% endif %}
+</div>
+<div class="container"> -->
+
+  <div class="message">
+
+
+  <div class="container  ">
+
+  
+<br>
+<br>
+
+<div class="card ">
+  <div class="card-header">Detection Result</div>
+  <div class="card-body">
+    <h3 class="card-title"> Result :  {{anse}}</h3>
+    {% if show %}
+
+    <h4>Please Don't try to take off the mask </h4>
+
+    {% else%}
+    <h4>Please Wear Mask Properly And Help Fight COVID-19</h4>
+    {% endif %}
+  
+    <div class="container">
+    <p class="card-text">
+      <ol>
+        <h5><li>Wash your hands frequently</li></h5>
+        <h5><li>Maintain social distancing</li></h5>
+        <h5><li> Avoid touching eyes, nose and mouth</li></h5>
+        <h5><li>If you have fever, cough and difficulty breathing, seek medical care early</li></h5>
+        <!-- <p> {{ide}}</p> -->
+        <!-- <li><h5>Wash your hands frequently</h5></li>
+        <li><h5>Wash your hands frequently</h5></li> -->
+      </ol>
+    </p>
+  </div>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<br>
+<br>
+
+<h3>
+  Save Result
+  <small class="text-muted">Your result will be saved to database for admin</small>
+</h3>
+<form action='save' method='POST' class="form-floating">
+  {% csrf_token%}
+  <div class="form-floating mb-3">
+    <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com" name='eid' value="{{user.pk}}" readonly>
+    <label for="floatingInputValue">User ID</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput"  name='result' value="{{ anse }}" readonly>
+    <label for="floatingInputValue">detection result</label>
+  <div>
+  
+  <button type="submit" class="btn btn-primary my-3 ">Save</button>
+</form>
+<br>
+<br>
+</div>
+</div>
+
+
+{% endblock %}

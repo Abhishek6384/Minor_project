@@ -1,0 +1,148 @@
+{% extends 'base.html' %} {% block css %}
+
+<style>
+  .message {
+    background-image: linear-gradient(to bottom, #feada6 0%, #f5efef 100%);
+  }
+
+
+
+
+  body{
+		background-color: #ebeff5;
+	}
+
+
+
+
+ .content-table{
+     border-collapse: collapse;
+margin: 25px 0px;
+font-size: 0.9em;
+min-width: 400px;
+border-radius: 10px 10px 0 0 ;
+overflow: hidden ;
+box-shadow:0 0 20px rgba(0,0, 0, 0.15) ;
+
+
+ }
+
+
+.content-table thead tr {
+     background-color: lightgreen;
+     color:black;
+     text-align: left;
+     font-weight: bold;
+
+ }
+
+ .content-table th,
+ .content-table td{
+     padding: 12px 15px;
+ }
+ .content-table tbody tr{
+     border-bottom: 1px solid gray;
+ }
+ .content-table tbody tr:nth-of-type(even){
+     background-color: #f3f3f3;
+
+ }
+ .content-table tbody tr:last-of-type{
+     border-bottom: 4px solid lightgreen;
+ }
+</style>
+
+{% endblock%} {% block body %} 
+<!-- {% if obj %} -->
+
+<!-- <table>
+  <tr>
+    <th>User ID</th>
+    <th>User name</th>
+    <th>email</th>
+    <th>time of submit</th>
+    <th>result</th>
+  </tr>
+  {% for ob in obj%}
+  <tr>
+    <td>{{ob.uid}}</td>
+    <td>{{ob.name}}</td>
+    <td>{{ob.email}}</td>
+    <td>{{ob.timestamp}}</td>
+    <td>{{ob.result}}</td>
+  </tr>
+  {% endfor %}
+</table> -->
+<!-- 
+<h1>show data</h1>
+{% for ob in obj%} {{ob.uid}} {{ob.name}} {{ob.email}} {{ob.timestamp}}
+{{ob.result}}
+<br />
+{% endfor %} {%else%}
+<h1>No data</h1>
+
+{% endif%} -->
+
+
+
+<table class="content-table mx-auto">
+  <thead>
+<tr>
+      <th>User ID</th>
+      <th>User name</th>
+      <th>email</th>
+      <th>time of submit</th>
+      <th>result</th>
+</tr>
+</thead>
+<tbody>
+  {% for ob in obj%}
+
+  <tr>
+      <td>{{ob.uid}}</td>
+      <td>{{ob.name}}</td>
+      <td>{{ob.email}}</td>
+      <td>{{ob.timestamp}}</td>
+      <td>{{ob.result}}</td>
+   
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+
+
+
+
+<br>
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+
+			<form method="get">
+				{{filter.form}}
+        <br>
+		    <button class="btn btn-primary my-1 mx-4" type="submit">Search</button>
+		  </form>
+
+		</div>
+	</div>
+	
+</div>
+
+<br>
+<br>
+
+<!-- <div class="row container mx-auto"> -->
+	
+
+        
+
+			
+
+        
+	
+
+		
+{% endblock %}

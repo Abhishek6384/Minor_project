@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block css %}
+
+<style>
+  .message {
+    background-image: linear-gradient(to bottom, #feada6 0%, #f5efef 100%);
+  }
+   body{
+		background-color: #ebeff5;
+	} 
+</style>
+
+{% endblock%} {% block body %}
+
+<div class="message">
+  <br>
+  
+  <div class="container">
+    
+
+    <div class="card text-center">
+      <div class="card-header"></div>
+      <div class="card-body">
+        <h4 class="card-title">Result Saved Successfully</h4>
+        <p class="card-text">
+          
+        </p>
+        <a href="prevresult" class="btn btn-primary">View All Results</a>
+      </div>
+      <div class="card-footer text-muted"></div>
+    </div>
+  </div>
+  
+</div>
+{% endblock %}

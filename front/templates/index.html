@@ -1,0 +1,159 @@
+{% extends 'base.html' %} {% block css %}
+
+<style>
+  .header {
+    height: 90vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    /*62,32,233*/
+    background: linear-gradient(
+        to right,
+        rgba(250, 64, 64, 0.233),
+        rgba(8, 8, 8, 0.9)
+      ),
+      url(https://5.imimg.com/data5/PI/FD/NK/SELLER-5866466/images-500x500.jpg);
+    background-size: cover;
+  }
+
+  .message {
+    background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  }
+
+  #order_list {
+    /* border: 2px solid red; */
+    width: 350px;
+    text-align: left;
+    margin: auto;
+  }
+  /* .button_css {
+  } */
+</style>
+
+{% endblock%} {% block body %} {% load static %}
+
+<header class="header">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-md-12 text-center">
+        <h1>Welcome To Mask Detection...!!!</h1>
+        <p>
+          In the new world of COVID-19 pandemic, multidisciplinary efforts have
+          been organized to slow the spread of the pandemic. The AI community
+          has also been a part of these endeavours. In particular, developments
+          for monitoring social distancing or identifying face masks have made
+          the headlines.
+        </p>
+        <a href="detect"
+          ><button class="btn btn-success">Check for Mask.</button></a
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- carousel -->
+<!-- <div
+  id="carouselExampleCaptions"
+  class="carousel slide carousel-fade"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/i3.png'%}" class="d-block w-100" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to iCoder</h5>
+        <p>Technology news, Development and Trends</p>
+        <button class="btn btn-danger">Technology</button>
+        <button class="btn btn-primary">Web Development</button>
+        <button class="btn btn-success">Tech Fun</button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/i6.jfif'%}" class="d-block w-100" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>The Best Coding Blog</h5>
+        <p>Technology news, Development and Trends</p>
+        <button class="btn btn-danger">Technology</button>
+        <button class="btn btn-primary">Web Development</button>
+        <button class="btn btn-success">Tech Fun</button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/i2.jfif'%}" class="d-block w-100" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Adda for Coders</h5>
+        <p>Technology news, Development and Trends</p>
+        <button class="btn btn-danger">Technology</button>
+        <button class="btn btn-primary">Web Development</button>
+        <button class="btn btn-success">Tech Fun</button>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+ -->
+
+<section class="message py-5">
+  <div class="container text-center">
+    <h1 style="font-size: 45px; font-weight: 500">
+      Application to check your Employee for Mask.
+    </h1>
+    <p>
+      The project is about to identify whether the person working in an
+      organization or company is wearing a mask or not. If the person is not
+      wearing a mask he or she is not allowed to enter in the organization.
+    </p>
+
+    <div style="font-size: 25px">
+      The following are the benefits of this project:
+    </div>
+    <div id="order_list">
+      <ul>
+        <li>Reduces the chance of transmission of virus.</li>
+        <li>No third person needed for checking the mask.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

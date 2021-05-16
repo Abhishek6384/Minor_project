@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mask Detection</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/png;base64,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"
+    />
+
+    {% block css %} {% endblock%}
+
+    <style>
+      .hello-msg {
+        font-size: 18px;
+        color: #fff;
+        margin-left: 20px;
+      }
+
+      .user_id {
+        border: 0 px solid white;
+        color: white;
+        border-radius: 8px;
+        background-color: red;
+        padding: 5px 10px 5px 10px;
+        margin-left: 750px;
+      }
+
+      .link {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navebar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mask Detection</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %}
+
+            <li class="nav-item mx-3">
+              <span>
+                <a class="hello-msg" href="contact">Contact</a>
+              </span>
+            </li>
+            <li class="nav-item mx-3">
+              <span class="hello-msg">Hello ,{{request.user}} </span>
+              <span ><a  class="hello-msg"href="{% url 'logout' %}">Logout</a> </span>
+            </li>
+            
+
+            <li class="nav-item mr-30">
+              <div class="user_id">
+                <span> User ID: {{user.pk}} </span>
+              </div>
+            </li>
+
+            {% else%}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <div class="mx-2">
+            <a class="navbar-brand" href="/admin">Admin</a>
+            <button
+              class="btn btn-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#signupModal"
+            >
+              Signup
+            </button>
+          </div>
+
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Button trigger modal -->
+
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="login">
+              <!-- <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter your email">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter password">
+                </div> -->
+
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="signupModal"
+      tabindex="-1"
+      aria-labelledby="signupModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Signup</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="signup">
+              <!-- <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter your email">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div> -->
+
+              <button type="submit" class="btn btn-success">Signup</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% for message in messages%}
+    <div
+      class="alert alert-{{ message.tags }}  mb-0  alert-dismissible fade show"
+      role="alert"
+    >
+      <strong>Message: </strong> {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %}
+    
+    
+    
+    {% block body %} {% endblock%}
+
+ 
+
+    <footer class="container   ">
+      <p class="float-end"><a href="#">Back to top</a></p>
+      <p>© 2020–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="# ">Terms</a></p>
+    </footer>
+    
+
+
+    <!-- <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2020–2021 iCoder, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer> -->
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
